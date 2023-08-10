@@ -21,5 +21,11 @@ export const TodoProvider = ({ children }) => {
         },
     ]);
 
-    return <TodoContext.Provider value={{ todos, setTodos }}>{children}</TodoContext.Provider>;
+    const createTodo = todo => {
+        const newTodo = [...todos, todo];
+
+        setTodos(newTodo);
+    };
+
+    return <TodoContext.Provider value={{ todos, createTodo }}>{children}</TodoContext.Provider>;
 };
