@@ -1,4 +1,4 @@
-import MagnifyingGlass from "../../public/images/magnifying-glass-light.svg";
+import PlusLight from "../images/plus-light.svg";
 
 const TodoForm = () => {
     return (
@@ -6,7 +6,7 @@ const TodoForm = () => {
             <div className="input-wrapper">
                 <input type="text" name="todo" placeholder="Digite sua nova tarefa..." />
                 <button type="submit">
-                    <img src={MagnifyingGlass} alt="submit" />
+                    <img src={PlusLight} alt="submit" />
                 </button>
             </div>
         </form>

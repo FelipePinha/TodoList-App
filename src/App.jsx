@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { TodoContext } from "./context/TodoContext";
+import { useContext } from "react";
 
 import TodoForm from "./components/TodoForm";
 import Todo from "./components/Todo";
@@ -7,23 +8,7 @@ import TodoFilter from "./components/TodoFilter";
 import "./styles/app.css";
 
 function App() {
-    const [todos, setTodos] = useState([
-        {
-            id: 1,
-            name: "Estudar",
-            completed: false,
-        },
-        {
-            id: 2,
-            name: "Trabalhar",
-            completed: false,
-        },
-        {
-            id: 3,
-            name: "Jogar bola",
-            completed: true,
-        },
-    ]);
+    const { todos } = useContext(TodoContext);
 
     return (
         <section className="todos">
