@@ -27,5 +27,21 @@ export const TodoProvider = ({ children }) => {
         setTodos(newTodo);
     };
 
-    return <TodoContext.Provider value={{ todos, createTodo }}>{children}</TodoContext.Provider>;
+    const completeTodo = id => {
+        const newTodos = todos.map(todo => {
+            if (todo.id === id) {
+                todo.completed = !todo.completed;
+            }
+
+            return todo;
+        });
+
+        setTodos(newTodos);
+    };
+
+    return (
+        <TodoContext.Provider value={{ todos, createTodo, completeTodo }}>
+            {children}
+        </TodoContext.Provider>
+    );
 };

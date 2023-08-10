@@ -18,7 +18,12 @@ function App() {
                     <TodoForm />
                     <div className="todo-box">
                         {todos.map(todo => (
-                            <Todo key={todo.id} name={todo.name} completed={todo.completed} />
+                            <Todo
+                                key={todo.id}
+                                name={todo.name}
+                                completed={todo.completed}
+                                id={todo.id}
+                            />
                         ))}
                         <TodoFilter />
                     </div>
