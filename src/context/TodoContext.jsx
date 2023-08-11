@@ -39,8 +39,13 @@ export const TodoProvider = ({ children }) => {
         setTodos(newTodos);
     };
 
+    const clearCompletedTodos = () => {
+        const newTodos = todos.filter(todo => !todo.completed);
+        setTodos(newTodos);
+    };
+
     return (
-        <TodoContext.Provider value={{ todos, createTodo, completeTodo }}>
+        <TodoContext.Provider value={{ todos, createTodo, completeTodo, clearCompletedTodos }}>
             {children}
         </TodoContext.Provider>
     );

@@ -106,6 +106,13 @@ form .input-wrapper {
 
 .filter-wrapper {
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-wrapper h4 {
+    font-weight: 400;
 }
 
 .filter-wrapper ul {
@@ -119,4 +126,22 @@ form .input-wrapper {
 .filter-wrapper ul li:hover {
     color: #808080;
     cursor: pointer;
+}
+
+.filter-wrapper button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.filter-wrapper button:hover {
+    color: #808080;
+}
+
+@media (max-width: 768px) {
+    .todo-wrapper {
+        width: 100%;
+    }
 }
