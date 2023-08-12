@@ -1,5 +1,5 @@
 import { TodoContext } from "./context/TodoContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import TodoForm from "./components/TodoForm";
 import Todo from "./components/Todo";
@@ -10,6 +10,10 @@ import "./styles/app.css";
 function App() {
     const { todos } = useContext(TodoContext);
     const [filter, setFilter] = useState("all");
+
+    useEffect(() => {
+        localStorage.setItem("Todos", JSON.stringify(todos));
+    }, [todos]);
 
     return (
         <section className="todos">

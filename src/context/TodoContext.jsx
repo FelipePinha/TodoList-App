@@ -3,7 +3,12 @@ import { createContext, useState } from "react";
 export const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(getLocalStorage());
+
+    function getLocalStorage() {
+        let list = JSON.parse(localStorage.getItem("Todos")) || [];
+        return list;
+    }
 
     const createTodo = todo => {
         const newTodo = [...todos, todo];
@@ -26,6 +31,7 @@ export const TodoProvider = ({ children }) => {
     const clearCompletedTodos = () => {
         const newTodos = todos.filter(todo => !todo.completed);
         setTodos(newTodos);
+        localStorage.setItem("Todos", JSON.stringify(todos));
     };
 
     return (
