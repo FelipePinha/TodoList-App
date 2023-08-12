@@ -22,22 +22,28 @@ function App() {
                 <div className="todo-wrapper">
                     <TodoForm />
                     <div className="todo-box">
-                        {todos
-                            .filter(todo =>
-                                filter === "all"
-                                    ? true
-                                    : filter === "completed"
-                                    ? todo.completed
-                                    : !todo.completed
-                            )
-                            .map(todo => (
-                                <Todo
-                                    key={todo.id}
-                                    name={todo.name}
-                                    completed={todo.completed}
-                                    id={todo.id}
-                                />
-                            ))}
+                        {todos.length > 0 ? (
+                            todos
+                                .filter(todo =>
+                                    filter === "all"
+                                        ? true
+                                        : filter === "completed"
+                                        ? todo.completed
+                                        : !todo.completed
+                                )
+                                .map(todo => (
+                                    <Todo
+                                        key={todo.id}
+                                        name={todo.name}
+                                        completed={todo.completed}
+                                        id={todo.id}
+                                    />
+                                ))
+                        ) : (
+                            <div className="empty-msg">
+                                <h2>Nenhuma tarefa adicionada ainda!</h2>
+                            </div>
+                        )}
                         <TodoFilter setFilter={setFilter} filter={filter} />
                     </div>
                 </div>

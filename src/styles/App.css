@@ -144,6 +144,15 @@ form .input-wrapper {
     color: #41b883;
 }
 
+.empty-msg {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.empty-msg h2 {
+    font-weight: 400;
+}
+
 @media (max-width: 768px) {
     .todo-wrapper {
         width: 100%;
