@@ -34,7 +34,7 @@ function App() {
                                     id={todo.id}
                                 />
                             ))}
-                        <TodoFilter setFilter={setFilter} />
+                        <TodoFilter setFilter={setFilter} filter={filter} />
                     </div>
                 </div>
             </div>

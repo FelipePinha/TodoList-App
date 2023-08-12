@@ -86,7 +86,7 @@ form .input-wrapper {
 .check-border {
     width: 15px;
     height: 15px;
-    border: 2px solid #3d3d3d;
+    border: 2px solid #41b883;
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ form .input-wrapper {
     width: 7px;
     height: 7px;
     border-radius: 50px;
-    background-color: #3d3d3d;
+    background-color: #41b883;
 }
 
 .completed {
@@ -124,7 +124,7 @@ form .input-wrapper {
 }
 
 .filter-wrapper ul li:hover {
-    color: #808080;
+    color: #41b883;
     cursor: pointer;
 }
 
@@ -137,7 +137,11 @@ form .input-wrapper {
 }
 
 .filter-wrapper button:hover {
-    color: #808080;
+    color: #41b883;
+}
+
+.filter-active {
+    color: #41b883;
 }
 
 @media (max-width: 768px) {
