@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 
-const TodoFilter = () => {
+const TodoFilter = ({ setFilter }) => {
     const { clearCompletedTodos, todos } = useContext(TodoContext);
 
     return (
@@ -10,9 +10,9 @@ const TodoFilter = () => {
                 {todos.length} {todos.length > 1 ? "tarefas" : "tarefa"}
             </h4>
             <ul>
-                <li>Todas</li>
-                <li>Ativas</li>
-                <li>Completas</li>
+                <li onClick={() => setFilter("all")}>Todas</li>
+                <li onClick={() => setFilter("incomplete")}>Ativas</li>
+                <li onClick={() => setFilter("completed")}>Completas</li>
             </ul>
             <button onClick={clearCompletedTodos}>Limpar completas</button>
         </div>

@@ -1,5 +1,5 @@
 import { TodoContext } from "./context/TodoContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import TodoForm from "./components/TodoForm";
 import Todo from "./components/Todo";
@@ -9,6 +9,7 @@ import "./styles/app.css";
 
 function App() {
     const { todos } = useContext(TodoContext);
+    const [filter, setFilter] = useState("all");
 
     return (
         <section className="todos">
@@ -17,15 +18,23 @@ function App() {
                 <div className="todo-wrapper">
                     <TodoForm />
                     <div className="todo-box">
-                        {todos.map(todo => (
-                            <Todo
-                                key={todo.id}
-                                name={todo.name}
-                                completed={todo.completed}
-                                id={todo.id}
-                            />
-                        ))}
-                        <TodoFilter />
+                        {todos
+                            .filter(todo =>
+                                filter === "all"
+                                    ? true
+                                    : filter === "completed"
+                                    ? todo.completed
+                                    : !todo.completed
+                            )
+                            .map(todo => (
+                                <Todo
+                                    key={todo.id}
+                                    name={todo.name}
+                                    completed={todo.completed}
+                                    id={todo.id}
+                                />
+                            ))}
+                        <TodoFilter setFilter={setFilter} />
                     </div>
                 </div>
             </div>
