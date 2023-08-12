@@ -149,3 +149,17 @@ form .input-wrapper {
         width: 100%;
     }
 }
+
+@media (max-width: 425px) {
+    .filter-wrapper h4 {
+        display: none;
+    }
+
+    .center {
+        padding: 0;
+    }
+
+    .todos {
+        padding: 10px;
+    }
+}
